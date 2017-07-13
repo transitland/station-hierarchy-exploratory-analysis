@@ -6,4 +6,4 @@ An exploratory analysis of station hierarchies in Transitland.
 - Analyzing tagging conventions in OpenStreetMap: [OSM Transit Tag Analysis](http://nbviewer.jupyter.org/github/transitland/station-hierarchy-exploratory-analysis/blob/master/notebooks/OSM_Transit_Tag_Analysis.ipynb)
 
 ### Visualizations
-- OpenStreetMap tags for stations, egresses, platforms and bus stops in the Bay Area: [OSM Transit Tags](https://transitland.github.io/station-hierarchy-exploratory-analysis/tables/OSM_tags.html)
+- OpenStreetMap tags for stations, egresses, platforms and bus stops in the Bay Area: [OSM Transit Tags](https://transitland.github.io/station-hierarchy-exploratory-analysis/html/OSM_tags.html)
