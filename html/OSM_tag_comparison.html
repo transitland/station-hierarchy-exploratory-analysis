@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>OSM Tags</title>
+  <title>OSM Transit Tags</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -51,24 +51,22 @@
 		margin: 0;
 	}
 
-	.populationPyramid {
-		font-size: 22px;
-		font-weight: 400;
-		text-align: center;
-	}
-
 	img {
     display: block;
     margin: auto;
 	}
+
+	#mapid { height: 400px; width: 50%}
 
   </style>
 </head>
 
 <body>
 
+<div class="container">
+
 <h1 class="header">OpenStreetMap Transit Tag Analysis</h1>
-<p class="split-para">Comparing Tagging Conventions in SF, NYC and Chicago</p>
+<p class="split-para">Comparing Transit Tagging Conventions in SF, NYC and Chicago</p>
 
   <!-- Nav tabs -->
   <ul class="nav nav-pills nav-justified" role="tablist">
@@ -76,13 +74,16 @@
     <li role="presentation"><a href="#2" aria-controls="2" role="tab" data-toggle="tab">Bus Stops</a></li>
     <li role="presentation"><a href="#3" aria-controls="3" role="tab" data-toggle="tab">Platforms</a></li>
     <li role="presentation"><a href="#4" aria-controls="4" role="tab" data-toggle="tab">Egresses</a></li>
+    <li role="presentation"><a href="#5" aria-controls="5" role="tab" data-toggle="tab">Methodology</a></li>
   </ul>
 
-
-
+<!-- Tab panes -->
+  <div class="tab-content">
 
   <!-- Stations -->
 	  <div role="tabpanel" class="tab-pane active" id="1">
+
+      <div>
          <h1>San Francisco + Oakland:</h1>
            <dl>
              <dt>
@@ -129,156 +130,186 @@
              </dl>
 	  </div>
 
+	  </div>
+
 	<!-- Bus Stops -->
-  <div role="tabpanel" class="tab-pane active" id="2">
-       <h1>San Francisco + Oakland:</h1>
-         <dl>
-           <dt>
-           <iframe
-             width="100%"
-             height="600"
-             frameborder="0"
-             scrolling="yes"
-             marginheight="0"
-             marginwidth="0"
-             src="../images/bus_stop_tags.png">
-           </iframe>
-           </dt>
-           </dl>
+	  <div role="tabpanel" class="tab-pane" id="2">
 
-       <h1>New York City</h1>
-         <dl>
-           <dt>
-           <iframe
-             width="100%"
-             height="600"
-             frameborder="0"
-             scrolling="yes"
-             marginheight="0"
-             marginwidth="0"
-             src="../images/bus_stop_tags_newyork.png">
-           </iframe>
-           </dt>
-           </dl>
+      <div>
+         <h1>San Francisco + Oakland:</h1>
+           <dl>
+             <dt>
+             <iframe
+               width="100%"
+               height="600"
+               frameborder="0"
+               scrolling="yes"
+               marginheight="0"
+               marginwidth="0"
+               src="../images/bus_stop_tags.png">
+             </iframe>
+             </dt>
+             </dl>
 
-       <h1>Chicago</h1>
-         <dl>
-           <dt>
-           <iframe
-             width="100%"
-             height="600"
-             frameborder="0"
-             scrolling="yes"
-             marginheight="0"
-             marginwidth="0"
-             src="../images/bus_stop_tags_chicago.png">
-           </iframe>
-           </dt>
-           </dl>
-  </div>
+         <h1>New York City</h1>
+           <dl>
+             <dt>
+             <iframe
+               width="100%"
+               height="600"
+               frameborder="0"
+               scrolling="yes"
+               marginheight="0"
+               marginwidth="0"
+               src="../images/bus_stop_tags_newyork.png">
+             </iframe>
+             </dt>
+             </dl>
+
+         <h1>Chicago</h1>
+           <dl>
+             <dt>
+             <iframe
+               width="100%"
+               height="600"
+               frameborder="0"
+               scrolling="yes"
+               marginheight="0"
+               marginwidth="0"
+               src="../images/bus_stop_tags_chicago.png">
+             </iframe>
+             </dt>
+             </dl>
+       </div>
+
+	  </div>
 
 	<!-- Platforms -->
-  <div role="tabpanel" class="tab-pane active" id="3">
-       <h1>San Francisco + Oakland:</h1>
-         <dl>
-           <dt>
-           <iframe
-             width="100%"
-             height="600"
-             frameborder="0"
-             scrolling="yes"
-             marginheight="0"
-             marginwidth="0"
-             src="../images/platform_tags.png">
-           </iframe>
-           </dt>
-           </dl>
+	 <div role="tabpanel" class="tab-pane" id="3">
+     <div>
+        <h1>San Francisco + Oakland:</h1>
+          <dl>
+            <dt>
+            <iframe
+              width="100%"
+              height="600"
+              frameborder="0"
+              scrolling="yes"
+              marginheight="0"
+              marginwidth="0"
+              src="../images/platform_tags.png">
+            </iframe>
+            </dt>
+            </dl>
 
-       <h1>New York City</h1>
-         <dl>
-           <dt>
-           <iframe
-             width="100%"
-             height="600"
-             frameborder="0"
-             scrolling="yes"
-             marginheight="0"
-             marginwidth="0"
-             src="../images/platform_tags_newyork.png">
-           </iframe>
-           </dt>
-           </dl>
+        <h1>New York City</h1>
+          <dl>
+            <dt>
+            <iframe
+              width="100%"
+              height="600"
+              frameborder="0"
+              scrolling="yes"
+              marginheight="0"
+              marginwidth="0"
+              src="../images/platform_tags_newyork.png">
+            </iframe>
+            </dt>
+            </dl>
 
-       <h1>Chicago</h1>
-         <dl>
-           <dt>
-           <iframe
-             width="100%"
-             height="600"
-             frameborder="0"
-             scrolling="yes"
-             marginheight="0"
-             marginwidth="0"
-             src="../images/platform_tags_chicago.png">
-           </iframe>
-           </dt>
-           </dl>
-  </div>
+        <h1>Chicago</h1>
+          <dl>
+            <dt>
+            <iframe
+              width="100%"
+              height="600"
+              frameborder="0"
+              scrolling="yes"
+              marginheight="0"
+              marginwidth="0"
+              src="../images/platform_tags_chicago.png">
+            </iframe>
+            </dt>
+            </dl>
+      </div>
+
+
+	  </div>
+
 
 	<!-- Egresses -->
-  <div role="tabpanel" class="tab-pane active" id="4">
-       <h1>San Francisco + Oakland:</h1>
-         <dl>
-           <dt>
-           <iframe
-             width="100%"
-             height="600"
-             frameborder="0"
-             scrolling="yes"
-             marginheight="0"
-             marginwidth="0"
-             src="../images/egress_tags.png">
-           </iframe>
-           </dt>
-           </dl>
+ 	  <div role="tabpanel" class="tab-pane" id="4">
+      <div>
+         <h1>San Francisco + Oakland:</h1>
+           <dl>
+             <dt>
+             <iframe
+               width="100%"
+               height="600"
+               frameborder="0"
+               scrolling="yes"
+               marginheight="0"
+               marginwidth="0"
+               src="../images/egress_tags.png">
+             </iframe>
+             </dt>
+             </dl>
 
-       <h1>New York City</h1>
-         <dl>
-           <dt>
-           <iframe
-             width="100%"
-             height="600"
-             frameborder="0"
-             scrolling="yes"
-             marginheight="0"
-             marginwidth="0"
-             src="../images/egress_tags_newyork.png">
-           </iframe>
-           </dt>
-           </dl>
+         <h1>New York City</h1>
+           <dl>
+             <dt>
+             <iframe
+               width="100%"
+               height="600"
+               frameborder="0"
+               scrolling="yes"
+               marginheight="0"
+               marginwidth="0"
+               src="../images/egress_tags_newyork.png">
+             </iframe>
+             </dt>
+             </dl>
 
-       <h1>Chicago</h1>
-         <dl>
-           <dt>
-           <iframe
-             width="100%"
-             height="600"
-             frameborder="0"
-             scrolling="yes"
-             marginheight="0"
-             marginwidth="0"
-             src="../images/egress_tags_chicago.png">
-           </iframe>
-           </dt>
-           </dl>
-  </div>
+         <h1>Chicago</h1>
+           <dl>
+             <dt>
+             <iframe
+               width="100%"
+               height="600"
+               frameborder="0"
+               scrolling="yes"
+               marginheight="0"
+               marginwidth="0"
+               src="../images/egress_tags_chicago.png">
+             </iframe>
+             </dt>
+             </dl>
+       </div>
+
+	  </div>
+
+
+
+	  <!-- Methodlogies -->
+
+	  <div role="tabpanel" class="tab-pane" id="5">
+
+	  	<iframe width="100%" height="800" frameborder="0" src="http://nbviewer.jupyter.org/github/transitland/station-hierarchy-exploratory-analysis/blob/master/notebooks/OSM_Transit_Tag_Analysis.ipynb" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+
+	  </div>
+
+</div>
 
 <!-- Footer -->
 <div class="footer">
-	<p class="text-muted" align="center"><a href="https://github.com/transitland/station-hierarchy-exploratory-analysis">Transitland Station Hierarchy Analysis</a></p>
+	<p class="text-muted" align="center"><a href="https://github.com/transitland/station-hierarchy-exploratory-analysis">View this project on Github</a></p>
 </div>
+
 
 <!-- JS libraries -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+
+<!-- Custom javascript -->
+<script src="code/js/script.js"></script>
