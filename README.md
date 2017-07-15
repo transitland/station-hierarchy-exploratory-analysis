@@ -6,4 +6,4 @@ An exploratory analysis of station hierarchies in Transitland.
 - Analyzing tagging conventions in OpenStreetMap: [OSM Transit Tag Analysis](http://nbviewer.jupyter.org/github/transitland/station-hierarchy-exploratory-analysis/blob/master/notebooks/OSM_Transit_Tag_Analysis.ipynb)
 
 ### Dashboards
-- Comparing Transit Tags in San Francisco, New York City and Chicago: [OSM Transit Tag Comparison](https://transitland.github.io/station-hierarchy-exploratory-analysis/html/OSM_tag_comparison.html)
+- [Comparing OSM Transit Tags in San Francisco, New York City and Chicago](https://transitland.github.io/station-hierarchy-exploratory-analysis/html/OSM_tag_comparison.html)
