@@ -7,3 +7,8 @@ An exploratory analysis of station hierarchies in Transitland.
 
 ### Dashboards
 - [Comparing OSM Transit Tags in San Francisco, New York City and Chicago](https://transitland.github.io/station-hierarchy-exploratory-analysis/html/OSM_tag_comparison.html)
+
+
+To run the processing sketch with Processing 3, you'll need the beta version of Unfolding Maps 0.9.9:
+
+http://services.informatik.hs-mannheim.de/~nagel/GDV/Unfolding_for_processing_0.9.9beta.zip
