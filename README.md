@@ -12,3 +12,5 @@ An exploratory analysis of station hierarchies in Transitland.
 To run the processing sketch with Processing 3, you'll need the beta version of Unfolding Maps 0.9.9:
 
 http://services.informatik.hs-mannheim.de/~nagel/GDV/Unfolding_for_processing_0.9.9beta.zip
+
+Unzip this file and drop it in: /Users/[YOUR_NAME]/Documents/Processing/libraries
