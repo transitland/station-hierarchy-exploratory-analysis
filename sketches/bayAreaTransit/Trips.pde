@@ -1,8 +1,10 @@
 // Credits:
 //
-// Juan Francisco Saldarriaga's citibike animation processing sketch
+// This class builds off of Juan Francisco Saldarriaga's
+// Citibike animation processing sketch:
 // https://github.com/juanfrans-courses/DataScienceSocietyWorkshop
 // 
+// And integrates it with Unfolding Maps library
 // Till Nagel, creator of the Unfolding Maps Library
 // https://github.com/tillnagel/unfolding
 
@@ -38,11 +40,10 @@ class Trips {
        currentPosition = map.getScreenPosition(currentLocation);
 
        // Zoom dependent ellipse size
-       float z = map.getZoom();
-       
-       if (z <= 32.0){ s = 3;
-       } else if (z == 64.0){ s = 3;
-       } else if (z == 128.0){ s = 3;
+       float z = map.getZoom();       
+       if (z <= 32.0){ s = 1;
+       } else if (z == 64.0){ s = 2;
+       } else if (z == 128.0){ s = 2;
        } else if (z == 256.0){ s = 3;
        } else if (z == 512.0){ s = 4;
        } else if (z == 1024.0){ s = 5;
@@ -52,8 +53,121 @@ class Trips {
        } else if (z >= 16384.0){ s = 10;
        }
        
-       ellipse(currentPosition.x, currentPosition.y, s, s);
        
+       
+       ellipse(currentPosition.x, currentPosition.y, s, s);
+   }
+  }
+  
+  void plotBus(){
+     if (frameCount >= startFrame && frameCount < endFrame){
+       float percentTravelled = (float(frameCount) - float(startFrame)) / float(tripFrames);
+       
+       currentLocation = new Location(
+         
+         lerp(start.x, end.x, percentTravelled),
+         lerp(start.y, end.y, percentTravelled));
+         
+       currentPosition = map.getScreenPosition(currentLocation);
+
+       // Zoom dependent ellipse size
+       float z = map.getZoom();       
+       if (z <= 32.0){ s = 1;
+       } else if (z == 64.0){ s = 2;
+       } else if (z == 128.0){ s = 2;
+       } else if (z == 256.0){ s = 2;
+       } else if (z == 512.0){ s = 3;
+       } else if (z == 1024.0){ s = 4;
+       } else if (z == 2048.0){ s = 5;
+       } else if (z == 4096.0){ s = 6;
+       } else if (z == 8192.0){ s = 7;
+       } else if (z >= 16384.0){ s = 9;
+       }
+       ellipse(currentPosition.x, currentPosition.y, s, s);
+   }
+  }
+  
+  void plotSubway(){
+     if (frameCount >= startFrame && frameCount < endFrame){
+       float percentTravelled = (float(frameCount) - float(startFrame)) / float(tripFrames);
+       
+       currentLocation = new Location(
+         
+         lerp(start.x, end.x, percentTravelled),
+         lerp(start.y, end.y, percentTravelled));
+         
+       currentPosition = map.getScreenPosition(currentLocation);
+
+       // Zoom dependent ellipse size
+       float z = map.getZoom();       
+       if (z <= 32.0){ s = 1;
+       } else if (z == 64.0){ s = 3;
+       } else if (z == 128.0){ s = 3;
+       } else if (z == 256.0){ s = 4;
+       } else if (z == 512.0){ s = 5;
+       } else if (z == 1024.0){ s = 7;
+       } else if (z == 2048.0){ s = 8;
+       } else if (z == 4096.0){ s = 9;
+       } else if (z == 8192.0){ s = 10;
+       } else if (z >= 16384.0){ s = 11;
+       }
+       ellipse(currentPosition.x, currentPosition.y, s, s);
+   }
+  }
+  
+  void plotTrain(){
+     if (frameCount >= startFrame && frameCount < endFrame){
+       float percentTravelled = (float(frameCount) - float(startFrame)) / float(tripFrames);
+       
+       currentLocation = new Location(
+         
+         lerp(start.x, end.x, percentTravelled),
+         lerp(start.y, end.y, percentTravelled));
+         
+       currentPosition = map.getScreenPosition(currentLocation);
+
+       // Zoom dependent ellipse size
+       float z = map.getZoom();       
+       if (z <= 32.0){ s = 1;
+       } else if (z == 64.0){ s = 4;
+       } else if (z == 128.0){ s = 5;
+       } else if (z == 256.0){ s = 6;
+       } else if (z == 512.0){ s = 7;
+       } else if (z == 1024.0){ s = 9;
+       } else if (z == 2048.0){ s = 10;
+       } else if (z == 4096.0){ s = 11;
+       } else if (z == 8192.0){ s = 12;
+       } else if (z >= 16384.0){ s = 13;
+       }
+       ellipse(currentPosition.x, currentPosition.y, s, s);
+   }
+  }
+  
+  void plotTram(){
+     if (frameCount >= startFrame && frameCount < endFrame){
+       float percentTravelled = (float(frameCount) - float(startFrame)) / float(tripFrames);
+       
+       currentLocation = new Location(
+         
+         lerp(start.x, end.x, percentTravelled),
+         lerp(start.y, end.y, percentTravelled));
+         
+       currentPosition = map.getScreenPosition(currentLocation);
+
+       // Zoom dependent ellipse size
+       float z = map.getZoom();       
+       if (z <= 32.0){ s = 1;
+       } else if (z == 64.0){ s = 3;
+       } else if (z == 128.0){ s = 3;
+       } else if (z == 256.0){ s = 4;
+       } else if (z == 512.0){ s = 5;
+       } else if (z == 1024.0){ s = 7;
+       } else if (z == 2048.0){ s = 8;
+       } else if (z == 4096.0){ s = 9;
+       } else if (z == 8192.0){ s = 10;
+       } else if (z >= 16384.0){ s = 11;
+       }
+       ellipse(currentPosition.x, currentPosition.y, s, s);
    }
   }
 }
