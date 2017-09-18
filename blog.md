@@ -76,6 +76,6 @@ Now that we have a dataset containing all of the locations, footprints and metad
 
 We can also dig into each individual tag and see the frequencies of its corresponding values:
 
-![fig](https://imgur.com/a/pPeis)
+![fig](https://i.imgur.com/SzboCFh.png)
 
 
