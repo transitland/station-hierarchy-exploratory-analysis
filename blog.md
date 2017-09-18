@@ -39,15 +39,12 @@ Let's say we were interested in toilets in New York City. We want to know where 
 
 First we provide a bounding box:
 
-`
-# Define our bounding box. Overpass expects bbox as South, West, North, East
-nyc_bbox = "40.543548,-74.167328,40.888082,-73.757401"
-`
+` # Define our bounding box. Overpass expects bbox as South, West, North, East
+nyc_bbox = "40.543548,-74.167328,40.888082,-73.757401"`
 
 Next, we use Overpass Turbo Query Wizard to construct an initial query, and copy that directly into the script.
 
-`
-# Our initial query as created with Overpass Turbo Query Wizard
+` # Our initial query as created with Overpass Turbo Query Wizard
 toilets_query = """
 [out:json][timeout:500];
 (
@@ -58,8 +55,7 @@ toilets_query = """
 out body;
 >;
 out skel qt;
-"""
-`
+"""`
 
 We use the `query_OSM` function to get a GeoJSON containing all of the toilets in New York City, according to OpenStreetMap.
 
