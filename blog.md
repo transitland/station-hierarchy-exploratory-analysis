@@ -59,17 +59,53 @@ out skel qt;
 Next, we use the `query_OSM` function to get a GeoJSON containing all of the toilets in New York City, according to OpenStreetMap.
 
 `toilets_in_nyc = query_OSM(toilets_query, nyc_bbox)`
-[out]: 355 points of interest returned. 124 as ways and 231 as nodes.
 
-Next, we use the `geojson2leaflet` function to easily make a leaflet map of the GeoJSON response from the previous step.
+Finally, we use the `geojson2leaflet` function to easily create a leaflet map of the GeoJSON response from the previous step.
 
-`geojson2leaflet(toilets_in_nyc, nyc_bbox, tiles='cartodbpositron')`
 ![fig](https://i.imgur.com/OR9hHDd.jpg)
 
-Note that our function will retrieve footprint polygons when avilable.
+Note that our function will retrieve polygon geometries when they are avilable.
 
 ![fig](https://i.imgur.com/ZEpiE1K.jpg)
 
+## How are toilets in NYC tagged on OpenStreetMap?
 
+Now that we have a dataset containing all of the locations, footprints and metadata of toilets in NYC, we can ask questions about how people tag these entities on OpenStreetMap?
 
-Note
+ |**Count**|**Percent (%)**
+:-----:|:-----:|:-----:
+amenity|355|100.0%
+@id|355|100.0%
+id|355|100.0%
+type|355|100.0%
+building|119|33.5%
+height|99|27.9%
+nycdoitt:bin|99|27.9%
+access|21|5.9%
+fee|18|5.1%
+addr:postcode|17|4.8%
+addr:street|17|4.8%
+addr:housenumber|17|4.8%
+wheelchair|15|4.2%
+toilets:disposal|15|4.2%
+name|15|4.2%
+male|11|3.1%
+female|11|3.1%
+unisex|9|2.5%
+operator|8|2.3%
+diaper|7|2.0%
+drinking\_water|6|1.7%
+ele|5|1.4%
+toilets:position|4|1.1%
+building:levels|3|0.8%
+opening\_hours|3|0.8%
+source|3|0.8%
+level|2|0.6%
+toilets:wheelchair|2|0.6%
+leisure|1|0.3%
+sport|1|0.3%
+addr:state|1|0.3%
+description|1|0.3%
+addr:city|1|0.3%
+created\_by|1|0.3%
+layer|1|0.3%
