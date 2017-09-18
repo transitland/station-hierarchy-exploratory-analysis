@@ -11,3 +11,10 @@ There exist a number of tools for getting and asking questions of OpenStreetMap 
 - [Overpass QL](http://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL), is a query language built specifically for the Overpass API
 
 In this notebook, we will define a few python functions to query the Overpass API programatically and convert the response to GeoJSON. We will download the locations, metadata and building footprints (if applicable) of all of the toilets in New York City, and we will ask some questions about how people tag New York City toilets in OpenStreetMap.
+
+## Searching OpenStreetMap for toilets in NYC using Overpass Turbo
+
+Below we use Overpass Turbo to construct a query for OpenStreetMap entities with "amenity"="toilets" in New York Cityl Overpass Turbo relies on OverPass Query Language, which can be a bit cryptic. Luckily, however, it comes with a Query Wizard tool which can help you generate queries by keyword search. From Overpass Turbo, we can view the data on an interactive map and export the data to a variety of file types, including GeoJSON, GPX and KML. 
+
+![fig](https://i.imgur.com/hd5z2rl.jpg)
+
