@@ -18,7 +18,6 @@ Below we use Overpass Turbo to construct a query for OpenStreetMap entities with
 
 ![fig](https://i.imgur.com/hd5z2rl.jpg)
 
-
 Overpass Turbo is a great tool. But what if you wanted to query OpenStreetMap programmatically? The python functions below enable you to do just that.
 
 ## Querying OpenStreetMap using Python and the Overpass Turbo API
@@ -44,7 +43,8 @@ nyc_bbox = "40.543548,-74.167328,40.888082,-73.757401"`
 
 Next, we use Overpass Turbo Query Wizard to construct an initial query, and copy that directly into the script.
 
-` # Our initial query as created with Overpass Turbo Query Wizard
+```
+# Our initial query as created with Overpass Turbo Query Wizard
 toilets_query = """
 [out:json][timeout:500];
 (
@@ -54,7 +54,8 @@ toilets_query = """
 );
 out body;
 >;
-out skel qt;"""`
+out skel qt;"""
+```
 
 We use the `query_OSM` function to get a GeoJSON containing all of the toilets in New York City, according to OpenStreetMap.
 
