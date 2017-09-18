@@ -18,3 +18,63 @@ Below we use Overpass Turbo to construct a query for OpenStreetMap entities with
 
 ![fig](https://i.imgur.com/hd5z2rl.jpg)
 
+
+Overpass Turbo is a great tool. But what if you wanted to query OpenStreetMap programmatically? The python functions below enable you to do just that.
+
+## Querying OpenStreetMap using Python and the Overpass Turbo API
+
+Rather than use Overpass Turbo graphical interface, we'll write a few python functions to get the data from OpenStreetMap. 
+
+Here are three helper functions for querying OpenStreetMap data:
+
+1. `query_OSM` writes a query to OpenStreetMap using Overpass API 
+2. `overpass2geojson` converts the Overpass API JSON response to GeoJSON
+3. `geojson2leaflet` creates a Leaflet map from GeoJSON using the Folium library
+
+See the python notebook for the code behind these functions.
+
+## Mapping toilets in New York City
+
+Let's say we were interested in toilets in New York City. We want to know where they are and what tags people are using to describe them.
+
+First we provide a bounding box:
+
+`
+# Define our bounding box. Overpass expects bbox as South, West, North, East
+nyc_bbox = "40.543548,-74.167328,40.888082,-73.757401"
+`
+
+Next, we use Overpass Turbo Query Wizard to construct an initial query, and copy that directly into the script.
+
+`
+# Our initial query as created with Overpass Turbo Query Wizard
+toilets_query = """
+[out:json][timeout:500];
+(
+  node["amenity"="toilets"]({{bbox}});
+  way["amenity"="toilets"]({{bbox}});
+  relation["amenity"="toilets"]({{bbox}});
+);
+out body;
+>;
+out skel qt;
+"""
+`
+
+We use the `query_OSM` function to get a GeoJSON containing all of the toilets in New York City, according to OpenStreetMap.
+
+`toilets_in_nyc = query_OSM(toilets_query, nyc_bbox)`
+`out: 355 points of interest returned. 124 as ways and 231 as nodes.`
+
+Next, we use the `geojson2leaflet` function to easily make a leaflet map of the GeoJSON response from the previous step.
+
+`geojson2leaflet(toilets_in_nyc, nyc_bbox, tiles='cartodbpositron')`
+![fig](https://i.imgur.com/OR9hHDd.jpg)
+
+Note that our function will retrieve footprint polygons when avilable.
+
+![fig](https://i.imgur.com/ZEpiE1K.jpg)
+
+
+
+Note
