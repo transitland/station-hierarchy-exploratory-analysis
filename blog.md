@@ -72,7 +72,7 @@ Note that our function will retrieve polygon geometries when they are avilable.
 
 Now that we have a dataset containing all of the locations, footprints and metadata of toilets in NYC, we can ask questions about how people tag these entities on OpenStreetMap?
 
- |**Count**|**Percent (%)**
+|**Count**|**Percent (%)**
 :-----:|:-----:|:-----:
 amenity|355|100.0%
 @id|355|100.0%
