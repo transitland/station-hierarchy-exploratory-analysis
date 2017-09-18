@@ -36,15 +36,13 @@ See the python notebook for the code behind these functions.
 
 Let's say we were interested in toilets in New York City. We want to know where they are and what tags people are using to describe them.
 
-First we provide a bounding box:
+First we provide a bounding box. Overpass API expects the bounding box to be in South, West, North, East format.
 
-` # Define our bounding box. Overpass expects bbox as South, West, North, East
-nyc_bbox = "40.543548,-74.167328,40.888082,-73.757401"`
+`nyc_bbox = "40.543548,-74.167328,40.888082,-73.757401"`
 
-Next, we use Overpass Turbo Query Wizard to construct an initial query, and copy that directly into the script.
+Next, we use Overpass Turbo Query Wizard to construct an initial query, and paste the query directly into the script.
 
 ```
-# Our initial query as created with Overpass Turbo Query Wizard
 toilets_query = """
 [out:json][timeout:500];
 (
@@ -54,13 +52,14 @@ toilets_query = """
 );
 out body;
 >;
-out skel qt;"""
+out skel qt;
+"""
 ```
 
-We use the `query_OSM` function to get a GeoJSON containing all of the toilets in New York City, according to OpenStreetMap.
+Next, we use the `query_OSM` function to get a GeoJSON containing all of the toilets in New York City, according to OpenStreetMap.
 
 `toilets_in_nyc = query_OSM(toilets_query, nyc_bbox)`
-`out: 355 points of interest returned. 124 as ways and 231 as nodes.`
+[out]: 355 points of interest returned. 124 as ways and 231 as nodes.
 
 Next, we use the `geojson2leaflet` function to easily make a leaflet map of the GeoJSON response from the previous step.
 
