@@ -54,8 +54,7 @@ toilets_query = """
 );
 out body;
 >;
-out skel qt;
-"""`
+out skel qt;"""`
 
 We use the `query_OSM` function to get a GeoJSON containing all of the toilets in New York City, according to OpenStreetMap.
 
