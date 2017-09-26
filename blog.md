@@ -101,7 +101,7 @@ Now that we have a dataset containing all of the locations, footprints and metad
 
 First, let's visualize all of the keys used to describe transit stations, ranked by popularity, for New York City and Berlin.
 
-![fig](https://i.imgur.com/6DbHuf2.png)
+![fig](https://i.imgur.com/26V9f3F.png)
 
 Notice that 95% of transit stations in Berlin have a wheelchair key associated with them, versus only 72% of transit stations in New York City. Let's dive into that further to see the various values associated with the wheelchair key:
 
