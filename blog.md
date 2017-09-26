@@ -90,7 +90,7 @@ the_map.save("output/nyc_map.html")
 
 You are now the proud owner of a map and a dataset containing every transit station in New York City that exists on OpenStreetMap!
 
-## How do people tag transit stations in NYC on OpenStreetMap?
+## How do people tag transit stations in NYC vs. Berlin on OpenStreetMap?
 
 Now that we have a dataset containing all of the locations, footprints and metadata of transit stations in NYC, we can ask questions about how people tag these entities on OpenStreetMap. See the jupyter note book for the code behind the following analysis.
 
@@ -107,9 +107,26 @@ For the sake of comparison, here is the same for Berlin:
 
 Notice that 95% of transit stations in Berlin have a wheelchair key associated with them, versus only 72% of transit stations in New York City. Let's dive into that further to see the various values associated with the wheelchair key:
 
+#### Wheelchair
+
 ![fig](https://i.imgur.com/bq5O6Vp.png)
 
 Not only are Berlin's stations more thoroughly tagged with the wheelchair key, but 75% of those stations with a wheelchair key have the value "yes", indiciating unlimited wheelchair accessibility. In NYC, it is nearly the reverse. 71% of stations tagged with a wheelchair key in NYC have the value "no", indicating no wheelchair accessibility.
+
+#### Railway
+
+![fig](https://i.imgur.com/YMvrhcU.png)
+
+It's interesting to note that in Berlin there is a distinction made between larger stations and "halts", which are small stations, usually unstaffed and with few or no facilities.
+
+Here are a few more comparisons of other popular key-value pairs:
+
+#### Network
+
+![fig](https://i.imgur.com/wznB3VY.png)
+
+
+
 
 
 
