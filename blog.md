@@ -109,7 +109,9 @@ Notice that 95% of transit stations in Berlin have a wheelchair key associated w
 
 ![fig](https://i.imgur.com/bq5O6Vp.png)
 
-Now we can see that not only does Berlin enjoy more thorough wheelchair key coverage, the vast
+Not only are Berlin's stations more thoroughly tagged with the wheelchair key, but 75% of those stations with a wheelchair key have the value "yes", indiciating unlimited wheelchair accessibility. In NYC, it is nearly the reverse. 71% of stations tagged with a wheelchair key in NYC have the value "no", indicating no wheelchair accessibility.
+
+
 
 
 
