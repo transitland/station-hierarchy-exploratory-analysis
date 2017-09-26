@@ -110,6 +110,7 @@ Notice that 95% of transit stations in Berlin have a wheelchair key associated w
 ![fig](https://i.imgur.com/12Fx7xP.png)
 
 
+![fig](https://i.imgur.com/bq5O6Vp.png)
 
 
 
