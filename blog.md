@@ -105,6 +105,9 @@ For the sake of comparison, here is the same for Berlin:
 
 ![fig](https://i.imgur.com/x4oleFY.png)
 
+Notice that 95% of transit stations in Berlin have a wheelchair key associated with them, versus only 72% of transit stations in New York City. Let's dive into that further to see the various values associated with the wheelchair key:
+
+![fig](https://i.imgur.com/12Fx7xP.png)
 
 
 
