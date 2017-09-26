@@ -24,4 +24,4 @@ We will download the locations, metadata and building footprints (if available) 
 
 Below, we use Overpass Turbo to construct an initial query for transit stations on OpenStreetMap in the greater New York City area. Overpass Turbo relies on OverPass Query Language, which can be a bit cryptic. Luckily, however, it comes with a Query Wizard tool which can help you generate queries based on a keyword search. Overpass Turbo enables us to view selected data from OpenStreetMap on an interactive map and export the data to a variety of file types, including GeoJSON, GPX and KML. 
 
-![fig]("https://i.imgur.com/1pkp9Ww.jpg")
+![fig](https://i.imgur.com/1pkp9Ww.jpg)
