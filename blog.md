@@ -94,11 +94,17 @@ You are now the proud owner of a map and a dataset containing every transit stat
 
 Now that we have a dataset containing all of the locations, footprints and metadata of transit stations in NYC, we can ask questions about how people tag these entities on OpenStreetMap. See the jupyter note book for the code behind the following analysis.
 
+First, let's visualize all of the keys used to describe transit stations, ranked by popularity.
 ```
 plot_keys(keys_by_popularity, "How are Transit Stations in New York City Tagged in OpenStreetMap?",
          output="output/nyc_osm_keys.png")
 ```
 ![fig](https://i.imgur.com/OMFOl2G.png)
+
+For the sake of comparison, here is the same for Berlin:
+
+![fig](https://i.imgur.com/x4oleFY.png)
+
 
 
 
