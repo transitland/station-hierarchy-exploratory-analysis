@@ -25,3 +25,84 @@ We will download the locations, metadata and building footprints (if available) 
 Below, we use Overpass Turbo to construct an initial query for transit stations on OpenStreetMap in the greater New York City area. Overpass Turbo relies on OverPass Query Language, which can be a bit cryptic. Luckily, however, it comes with a Query Wizard tool which can help you generate queries based on a keyword search. Overpass Turbo enables us to view selected data from OpenStreetMap on an interactive map and export the data to a variety of file types, including GeoJSON, GPX and KML. 
 
 ![fig](https://i.imgur.com/1pkp9Ww.jpg)
+
+You may view this query on [Overpass Turbo](http://overpass-turbo.eu/s/rZ7).
+
+## Programmatically querying OSM via the Overpass Turbo API
+
+Overpass Turbo is a great tool. But what if you wanted to query OpenStreetMap programmatically and analyze the raw data? Rather than use the Overpass Turbo graphical interface, let's write a few python functions to get the data from OpenStreetMap. 
+
+In this [jupyter notebook](https://github.com/transitland/station-hierarchy-exploratory-analysis) I define three helper functions for querying OpenStreetMap data:
+
+1. `queryOSM` writes a query to OpenStreetMap using Overpass API and returns a JSON response
+2. `overpass2geojson` converts the Overpass API JSON response to GeoJSON
+3. `geojson2leaflet` creates a Leaflet map from GeoJSON using the Folium library
+
+See the notebook for the code behind these functions.
+
+We are interested in how people tag transit stations in New York City. We want to know where all of the transit stations are and what tags people are using to describe them. Let's use the aforementioned functions to get and explore this data.
+
+First, we need to define the bounding box that we are interested in.
+
+```
+# Define your bounding box. Overpass expects bbox in the format: South, West, North, East
+your_bbox = "40.460532,-74.308777,40.939452,-73.714142" # NYC
+```
+
+Next, we craft an initial query using the Overpass Turbo Query Wizard and paste it into a string.
+
+```
+# Our initial query as created with Overpass Turbo Query Wizard
+
+your_query = """
+[out:json][timeout:500];
+// gather results
+(
+  // auto-generated query for “railway=station”
+  node["railway"="station"]({{bbox}});
+  way["railway"="station"]({{bbox}});
+  relation["railway"="station"]({{bbox}});
+  
+  // custom piece to include "public_transport"="station, too:
+  node["public_transport"="station"]({{bbox}});
+  way["public_transport"="station"]({{bbox}});
+  relation["public_transport"="station"]({{bbox}});
+);
+// print results
+out body;
+>;
+out skel qt;
+"""
+```
+
+Now, we can use the `queryOSM` function to get a GeoJSON containing locations and metadata for all of the transit stations in New York City that exist on OpenStreetMap.
+
+```
+results_geojson = queryOSM(your_query, your_bbox)
+```
+
+And finally, we use `geojson2leaflet` function to make a map of the GeoJSON response from the previous step. Clicking on any marker or polygon will bring up a popup containing all of it's OpenStreetMap tags.
+
+```
+the_map = geojson2leaflet(results_geojson, your_bbox, tiles='OpenStreetMap')
+the_map.save("output/nyc_map.html")
+```
+
+You are now the proud owner of a map and a dataset containing every transit station in New York City that exists on OpenStreetMap!
+
+## How do people tag transit stations in NYC on OpenStreetMap?
+
+Now that we have a dataset containing all of the locations, footprints and metadata of transit stations in NYC, we can ask questions about how people tag these entities on OpenStreetMap. See the jupyter note book for the code behind the following analysis.
+
+```
+plot_keys(keys_by_popularity, "How are Transit Stations in New York City Tagged in OpenStreetMap?",
+         output="output/nyc_osm_keys.png")
+```
+![fig](https://i.imgur.com/OMFOl2G.png)
+
+
+
+
+
+
+
