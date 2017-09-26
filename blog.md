@@ -88,6 +88,11 @@ the_map = geojson2leaflet(results_geojson, your_bbox, tiles='OpenStreetMap')
 the_map.save("output/nyc_map.html")
 ```
 
+**Stations in Greater NYC Area on OpenStreetMap:**
+
+![fig](https://i.imgur.com/MGbO0Pl.jpg)
+*View the interactive map [here](https://transitland.github.io/station-hierarchy-exploratory-analysis/maps/nyc_stations.html)*
+
 You are now the proud owner of a map and a dataset containing every transit station in New York City that exists on OpenStreetMap!
 
 ## How do people tag transit stations in NYC vs. Berlin on OpenStreetMap?
@@ -126,7 +131,12 @@ Here are a few more comparisons of other popular key-value pairs:
 ![fig](https://i.imgur.com/wznB3VY.png)
 
 
+# Mapping transit stations and bus stops with custom icons
 
+As a reward for reading this far, here's a map of all the transit stations and bus stops in NYC on OpenStreetMap. It appears that bus stops in South Brooklyn are under-mapped.
+
+![fig](https://i.imgur.com/gM5KEeK.jpg)
+*Interactive map [here](https://transitland.github.io/station-hierarchy-exploratory-analysis/maps/nyc_stations_and_stops.html)
 
 
 
